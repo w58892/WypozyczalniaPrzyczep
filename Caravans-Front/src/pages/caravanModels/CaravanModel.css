@@ -1,0 +1,64 @@
+.grid {
+    display: flex;
+    flex-direction: row ;
+    flex-wrap:  wrap;
+    align-items: center; 
+    justify-content: center;
+}
+
+.grid img{
+    width:100%;
+}
+
+.caravan{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    text-align: center;
+    height:550px;
+    width:280px;
+    margin:5px;
+    border: 1px solid rgb(219, 217, 217);
+    list-style-type: none;
+    padding: 0;
+}
+
+.caravan img{
+    width:100%;
+    height: 210px;
+}
+
+.caravan li{
+    height:30px;
+    margin:10px;
+    width:60%;
+    border-bottom: 1px solid rgb(219, 217, 217);
+}
+
+.caravan li:first-of-type{
+    font-size: 23px;
+    font-weight:600;
+    border: 0;
+    width:90%;
+}
+
+.model{
+    font-size: 20px;
+    margin:10px;
+}
+
+.caravan .price{
+    width:200px;
+    color:brown;
+    font-size: 30px;
+    border-bottom: 3px solid brown;
+    padding-bottom: 20px;
+}
+
+.caravan button{
+    background-color: brown;
+    color:white;
+    border: none;
+    width: 80px;
+    height: 40px;
+}

@@ -1,0 +1,84 @@
+.caravanInfo{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap:  wrap;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px;
+}
+
+h1 {
+    width: 100%;
+    margin:30px auto;
+    text-align: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.specyfication{
+    width: 400px;
+    font-size: 20px;
+    border-spacing: 0;
+    float: left;
+}
+
+.specyfication td{
+    height: 40px;
+}
+
+.specyfication td:nth-of-type(2){
+    align-items: right;
+    text-align: right;
+}
+
+.specyfication tr:nth-of-type(2n){
+    width: 50%;
+    background-color:rgb(228, 224, 224) ;
+}
+
+.caravanInfo img{
+    width: 600px;
+    float:right;
+}
+.addReservation{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap:  wrap;
+    align-items: center; 
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.addReservation input{
+    width:140px;
+    height: 30px;
+    margin:0 15px;
+    font-size: large;
+}
+
+.addReservation label{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+.addReservation p{
+    color:brown;
+    font-size: 20px;
+}
+
+.addReservation button{
+    background-color: brown;
+    color:white;
+    border: none;
+    width: 90px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.error{
+    color:brown;
+    display: flex;
+    font-size: 15px;
+    align-items: center; 
+    justify-content: center;
+}

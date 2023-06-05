@@ -1,0 +1,74 @@
+.noneRes{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.reservations {
+    font-size: larger;
+    border-collapse: collapse; 
+    width: 90%;
+    margin: 0 auto;
+    list-style: none;
+    padding-left: 20%;
+    margin-top: 20px;
+}
+
+
+.reservations td:first-of-type{
+    border-left: 1px solid brown;
+    padding-left: 2%; 
+}
+
+.reservations td:last-of-type{
+    border-right: 1px solid brown;
+}
+
+.reservations td{
+    padding:20px 5px;
+    border-bottom: 1px solid brown;
+    border-top: 1px solid brown;
+}
+
+.reservations button{
+    width:80px;
+    height: 40px;
+    background-color: brown;
+    color:white;
+    border: none; 
+}
+
+.buttonPDF{
+    padding: 0; 
+    margin: 0; 
+}
+
+.buttonPDF button
+{
+    width: 80%;
+}
+
+@media (max-width:900px)
+{
+
+    .reservations td:first-of-type{
+        border-left: none;
+    }
+    
+    .reservations td:last-of-type{
+        border-right: none;
+    }
+
+    .reservations td{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        border:none;
+        padding:5px;
+    }
+
+    .reservations tr{
+        border:2px solid brown;
+        padding-bottom:300px;
+    }
+}
