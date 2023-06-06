@@ -63,6 +63,7 @@ export default function Navbar() {
 			<Link to="/" >
 				<img src={`/images/logo.png`}
 					style={{width: 50}}
+					alt="strona główna"
 				/>
 			</Link>
 			<Toolbar>{headerLinks}</Toolbar>

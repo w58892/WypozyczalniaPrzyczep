@@ -17,9 +17,11 @@ class Reservations extends Component {
     {
     getByUser(token.UserId)
       .then(res => {
-        const reservations = res.data;
-        this.setState({ reservations: reservations });
-      })
+        if(res){
+          const reservations = res.data;
+          this.setState({ reservations: reservations });
+        }
+      });
     }
   }
 

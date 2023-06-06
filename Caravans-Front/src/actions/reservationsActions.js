@@ -2,15 +2,13 @@ import axios from "axios";
 import { hostName } from "./host";
 
 export const getByUser = async (userId) => {
-	try {
-		const res = await axios.get(`${hostName}/api/Reservation/GetByUser/${userId}`, {		
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`
-            }});
-		return res;
-	} catch (error) {
-	    console.log(error);
-	}
+    const res = await axios.get(`${hostName}/api/Reservation/GetByUser/${userId}`, {		
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+        }}).catch(err => {
+            console.log(err)
+        });
+    return res;
 };
 
 export const addReservation = async (reservation) => {

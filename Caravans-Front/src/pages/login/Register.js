@@ -18,7 +18,7 @@ export class Register extends Component {
 	handleRegister= () => {
 		const { email, password, password2} = this.state;
 		const user = { email, password };
-		if(password != password2){
+		if(password !== password2){
 			this.setState({ errors: {Password2: "Hasła muszą być identyczne"}});
 			return;
 		}

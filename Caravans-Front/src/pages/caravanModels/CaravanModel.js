@@ -11,22 +11,24 @@ export class CaravanModel extends Component {
   componentDidMount() {
     getCaravanModels()
       .then(res => {
-        const caravans = res.data;
-        this.setState({ caravans });
-    })
+        if(res){
+          const caravans = res.data;
+          this.setState({ caravans });
+        }
+    });
   }
 
   render() {
     return (
       <div className="grid">        
-        <img src='../../images/slider.jpg'></img>
+        <img src='../../images/slider.jpg' alt="slider"></img>
         <h1>Przyczepy kempingowe na wynajem</h1>
 
         {
           this.state.caravans
             .map(caravanModel =>
               <ul className="caravan" key={caravanModel.modelId}>
-                <img src={`../../images/caravans/${caravanModel.picture}`}></img>
+                <img src={`../../images/caravans/${caravanModel.picture}`} alt="przyczepa"/>
                 <li className="model">{caravanModel.model}</li>
                 <li className="price">{caravanModel.price} PLN/dzień</li>
                 <li>Długość: {caravanModel.length} mm</li>

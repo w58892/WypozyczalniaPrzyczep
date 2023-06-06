@@ -17,8 +17,10 @@ class CaravanModelInfo extends Component{
     componentDidMount() {
         getCaravanModelsById(this.props.params.id)
           .then(res => {
-            const caravans = res.data;
-            this.setState({ caravans : caravans });
+            if(res){
+                const caravans = res.data;
+                this.setState({ caravans : caravans });
+            }
         })
     }
 
@@ -106,7 +108,7 @@ class CaravanModelInfo extends Component{
                     </tbody>
                 </table>
 
-                <img src={`/Images/caravans/${caravanModel.picture}`}/>
+                <img src={`/Images/caravans/${caravanModel.picture}`} alt="przyczepa"/>
             </div>
             <div className="addReservation">
                 <p>{caravanModel.price}PLN/dzień</p>
