@@ -9,7 +9,7 @@ namespace Caravans.Interfaces
         Task<Reservation> Add(Reservation reservation);
         Task<Reservation> Update(Reservation reservation);
         Task Delete(Reservation reservation);
-        Task<byte[]> GetPdf(Guid id);
+        Task<byte[]> GetPdf(Reservation reservation);
         Task<Reservation> ConfirmReservation(Guid id);
         Task<IEnumerable<ReservationCaravan>> GetByUser(Guid userId);
         Task<Guid> AvailableCaravan(ReservationAdd reservation);

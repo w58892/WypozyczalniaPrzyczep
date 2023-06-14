@@ -77,10 +77,10 @@ namespace Caravans.Repositories
             return reservation;
         }
 
-        public async Task<byte[]> GetPdf(Guid id)
+        public async Task<byte[]> GetPdf(Reservation reservation)
         {
             Pdf pdf = new Pdf(_context);
-            return await pdf.CreatePdf(id);
+            return await pdf.CreatePdf(reservation);
         }
 
         public async Task<Reservation> ConfirmReservation(Guid id)

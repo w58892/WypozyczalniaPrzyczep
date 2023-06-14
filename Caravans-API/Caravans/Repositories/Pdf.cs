@@ -9,22 +9,20 @@ namespace Caravans.Repositories
     public class Pdf
     {
 
-        private IReservationRepository _reservationRepository;
         private ICaravanRepository _caravanRepository;
         private ICaravanmodelRepository _caravanmodelRepository;
         private IUserRepository _userRepository;
 
         public Pdf(DatabaseContext context)
         {
-            _reservationRepository = new ReservationRepository(context);
             _caravanRepository = new CaravanRepository(context);
             _caravanmodelRepository = new CaravanmodelRepository(context);
             _userRepository = new UserRepository(context);
         }
 
-        public async Task<byte[]> CreatePdf(Guid id)
+        public async Task<byte[]> CreatePdf(Reservation reser)
         {
-            Reservation reservation = await _reservationRepository.Get(id);
+            Reservation reservation = reser;
             Caravan caravan = await _caravanRepository.Get(reservation.CaravanId);
             Caravanmodel caravanmodel = await _caravanmodelRepository.Get(caravan.ModelId);
             User user = await _userRepository.Get(reservation.UserId);

@@ -37,14 +37,6 @@ namespace Caravans.Controllers
             return Ok(reservation);
         }
 
-        // GET: reservation/id
-        [HttpGet("PDF/{id}")]
-        public async Task<IActionResult> GetPDF(Guid id)
-        {
-                string Filename = "faktura.pdf";
-                return File(await _reservationRepository.GetPdf(id), "application/pdf", Filename);
-        }
-
         // GET: reservation/GetByUser/userId
         [HttpGet("GetByUser/{userId}")]
         public async Task<IActionResult> GetByUser(Guid userId)
@@ -113,7 +105,12 @@ namespace Caravans.Controllers
         [HttpGet("GetPdf/{id}")]
         public async Task<IActionResult> GetPdf(Guid id)
         {
-            return File(await _reservationRepository.GetPdf(id), "application/pdf", "lol.pdf");
+            var reservation = await _reservationRepository.Get(id);
+            if (reservation == null)
+            {
+                return NotFound();
+            }
+            return File(await _reservationRepository.GetPdf(reservation), "application/pdf", "faktura.pdf");
         }
     }
 }
