@@ -113,16 +113,16 @@ namespace Caravans.Controllers
         {
             User user = await _userRepository.GetByEmail(login.Email);
             if (user == null)
-                return Unauthorized("not exist");
+                return BadRequest(JsonSerializer.Serialize(new { errors = new { Email = "Taki użytkownik nie istnieje" } }));
             bool verified = BCrypt.Net.BCrypt.Verify(login.Password, user.Password);
 
             if (!verified)
-                return Unauthorized("wrong password");
+                return BadRequest(JsonSerializer.Serialize(new { errors = new { Password = "Błędne hasło" } }));
 
             var token = _jwtAutenticationManager.Authenticate(user);
 
             if (token == null)
-                return Unauthorized("no token");
+                return BadRequest(JsonSerializer.Serialize(new { errors = new { Token = "brak tokenu" } }));
 
             return Ok(token);
         }
